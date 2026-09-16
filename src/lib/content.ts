@@ -72,6 +72,7 @@ export function getFinalRouteManifest(
   sourcePages: PageContent[] = pages,
 ): FinalRouteManifestEntry[] {
   return sourcePages
+    .filter((page) => !isFixturePage(page))
     .map((page) => ({
       id: page.id,
       translationKey: page.translationKey,
