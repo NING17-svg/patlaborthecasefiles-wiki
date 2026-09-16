@@ -6,10 +6,17 @@ export interface LocalizedNavigationItem {
 }
 
 export const primaryNavigation: LocalizedNavigationItem[] = [
-  { href: "/wiki", labels: { "en-US": "Wiki" } },
-  { href: "/guides", labels: { "en-US": "Guides" } },
-  { href: "/release-date", labels: { "en-US": "Release Date" } },
-  { href: "/faq", labels: { "en-US": "FAQ" } },
+  // Identity & Status cluster
+  { href: "/patlabor-the-case-files/", labels: { "en-US": "Overview" } },
+  { href: "/patlabor-the-case-files/release-date/", labels: { "en-US": "Release Date" } },
+  { href: "/patlabor-the-case-files/ps5-release-date/", labels: { "en-US": "PS5 Status" } },
+  { href: "/patlabor-the-case-files/franchise/", labels: { "en-US": "Franchise" } },
+  // Play & Buy cluster
+  { href: "/patlabor-the-case-files/gameplay/", labels: { "en-US": "Gameplay" } },
+  { href: "/patlabor-the-case-files/steam/", labels: { "en-US": "Steam" } },
+  { href: "/patlabor-the-case-files/system-requirements/", labels: { "en-US": "System Requirements" } },
+  { href: "/patlabor-the-case-files/trailer/", labels: { "en-US": "Trailer" } },
+  { href: "/patlabor-the-case-files/reviews/", labels: { "en-US": "Reviews" } },
 ];
 
 export const footerNavigation: LocalizedNavigationItem[] = [

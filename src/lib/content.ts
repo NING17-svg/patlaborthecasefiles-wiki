@@ -1,26 +1,30 @@
 import type { FAQItem, PageContent, RouteKind } from "@/types/content";
 import { entityFamilies } from "@/data/entities";
 import { faqItems } from "@/data/faq";
-import { guidePages } from "@/data/pages/guide-pages";
+import { fixedPages } from "@/data/pages/fixed-pages";
 import { homePage } from "@/data/pages/home";
-import { releasePages } from "@/data/pages/release-pages";
 import { sitePages } from "@/data/pages/site-pages";
-import { wikiPages } from "@/data/pages/wiki-pages";
 import { buildEntityPages } from "@/lib/entities";
 import { normalizePath } from "@/lib/localization";
 
-const fixedPages: PageContent[] = [
+const fixedPagesList: PageContent[] = [
   homePage,
-  ...wikiPages,
-  ...guidePages,
-  ...releasePages,
+  ...fixedPages,
   ...sitePages,
 ];
 
 const pages: PageContent[] = [
-  ...fixedPages,
+  ...fixedPagesList,
   ...buildEntityPages(entityFamilies),
 ];
+
+// Template fixture pages (id: "guides", "wiki", "faq") are required by
+// validate-template-contract.ts but live behind URLs that start with `/_`.
+// They must exist in the registry for template validation, but must not
+// appear in the sitemap, homepage recent updates, or search index.
+function isFixturePage(page: PageContent): boolean {
+  return page.url.startsWith("/_");
+}
 
 export interface FinalRouteManifestEntry {
   id: string;
@@ -36,7 +40,7 @@ export function getAllPages(): PageContent[] {
 }
 
 export function getIndexablePages(): PageContent[] {
-  return pages;
+  return pages.filter((page) => !isFixturePage(page));
 }
 
 export function getPageByUrl(url: string): PageContent | undefined {

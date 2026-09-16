@@ -3,58 +3,6 @@ import type { PageContent } from "@/types/content";
 
 export const sitePages: PageContent[] = [
   {
-    id: "faq",
-    translationKey: "faq",
-    locale: "en-US",
-    routeKind: "fixed",
-    slug: "faq",
-    url: "/faq",
-    pageType: "faq",
-    presentation: { shell: "content", variant: "reading-full" },
-    h1: `${site.gameName} FAQ`,
-    seoTitle: `${site.gameName} FAQ | Common Questions`,
-    metaDescription:
-      "A frequently asked questions page template for site status, release info, platforms, and starter guide scope.",
-    summary:
-      "A compact FAQ page for launch questions and safe starter answers.",
-    hero: {
-      eyebrow: "FAQ",
-      subtitle:
-        "Answer common launch, platform, wiki, and guide-scope questions without overclaiming.",
-      ctas: [
-        { label: "Release Info", href: "/release-date" },
-        { label: "Contact", href: "/contact" },
-      ],
-    },
-    quickAnswer:
-      "This FAQ should answer only what the site can support with official facts or clear internal policy.",
-    keyFacts: [
-      { label: "FAQ source", value: "Official facts or site policy" },
-      { label: "Schema", value: "FAQ JSON-LD enabled" },
-      { label: "Review", value: "Update as launch facts change" },
-    ],
-    modules: [
-      {
-        id: "faq-policy",
-        type: "prose",
-        heading: "FAQ policy",
-        body:
-          "Keep answers short, source-aware, and easy to update. Avoid speculative claims about release dates, platforms, gameplay systems, or technical details.",
-      },
-    ],
-    faqIds: [
-      "what-is-this-site",
-      "is-official",
-      "release-date-known",
-      "platforms-known",
-      "guide-depth",
-    ],
-    relatedPageIds: ["wiki", "guides", "release-date", "about"],
-    schemaTypes: ["FAQPage", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
-  },
-  {
     id: "about",
     translationKey: "about",
     locale: "en-US",
@@ -66,21 +14,21 @@ export const sitePages: PageContent[] = [
     h1: `About ${site.name}`,
     seoTitle: `About ${site.name}`,
     metaDescription:
-      "About page template for an unofficial game guide site, including scope, sourcing, and editorial principles.",
+      "About PATLABOR the Case Files Wiki: an unofficial fan reference built from the live Steam store page and SteamDB, with facts dated to the research date.",
     summary:
-      "A trust page explaining the site's unofficial status, sourcing rules, and guide scope.",
+      "What PATLABOR the Case Files Wiki covers, how facts are sourced, and what readers should expect.",
     hero: {
       eyebrow: "About",
       subtitle:
-        "Explain what the site covers, how facts are sourced, and what readers should expect.",
+        "An unofficial fan reference built from the Steam store page, SteamDB metadata, and GOOD SMILE COMPANY publisher announcements.",
       ctas: [{ label: "Contact", href: "/contact" }],
     },
     quickAnswer:
-      `${site.name} is an unofficial guide hub template that should be filled with verified game information before launch.`,
+      `${site.name} is an unofficial fan reference hub for PATLABOR the Case Files (Steam AppID 3275400). Every fact is dated, sourced to the Steam store page or SteamDB, and re-verified against the live store at the research date.`,
     keyFacts: [
-      { label: "Status", value: "Unofficial fan guide" },
-      { label: "Editorial rule", value: "Verified facts first" },
-      { label: "Scope", value: "Wiki, guides, release info, FAQ" },
+      { label: "Status", value: "Unofficial fan reference" },
+      { label: "Research date", value: "2026-09-16" },
+      { label: "Source rule", value: "Steam store + SteamDB + GOOD SMILE COMPANY press" },
     ],
     modules: [
       {
@@ -88,21 +36,28 @@ export const sitePages: PageContent[] = [
         type: "prose",
         heading: "Mission",
         body:
-          "Help players find clear, well-structured information without pretending the site knows more than official sources support.",
+          "Help en-US players decide whether PATLABOR the Case Files is for them, when and where to play it on PC Steam, and how the new game fits the long-running Mobile Police Patlabor franchise. The hub collects launch-day pages players most often search for: release date, PS5 status, gameplay, trailer, reviews, Steam page, system requirements, and franchise context.",
       },
       {
         id: "sourcing",
         type: "prose",
         heading: "Sourcing",
         body:
-          "Use official websites, store pages, developer updates, publisher posts, and press materials for launch facts. Mark uncertain areas as pending instead of filling gaps with guesses.",
+          "Use only the Steam store page for AppID 3275400, SteamDB metadata, and GOOD SMILE COMPANY publisher announcements to set current-game hard facts (release date, platform, modes, languages). Legacy franchise material (the 1988–1989 Mobile Police Patlabor anime, OVAs, films, manga, prior games) is treated as franchise context only and never used to set current-game facts. Any unannounced item (PS5 release, DLC plans, post-launch roadmap) is written as a dated not-confirmed statement rather than as a placeholder or TBD.",
+      },
+      {
+        id: "editorial",
+        type: "prose",
+        heading: "Editorial rules",
+        body:
+          "All facts are dated to the research date 2026-09-16. No speculation, no fanfic conclusions, no copy from other fan sites. The site never uses the publisher wordmark, Headgear marks, GOOD SMILE COMPANY marks, or Chime Corporation marks; brand presentation relies on the text brand mark and the approved theme palette only.",
       },
     ],
-    faqIds: ["what-is-this-site", "is-official"],
-    relatedPageIds: ["contact", "privacy-policy", "terms"],
-    schemaTypes: ["Article", "BreadcrumbList", "FAQPage"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    faqIds: [],
+    relatedPageIds: ["fixed-patlabor-overview-en-US", "contact", "privacy-policy", "terms"],
+    schemaTypes: ["Article", "BreadcrumbList"],
+    sourceStatus: "official",
+    lastReviewed: "2026-09-16",
   },
   {
     id: "contact",
@@ -116,43 +71,50 @@ export const sitePages: PageContent[] = [
     h1: "Contact",
     seoTitle: `Contact | ${site.name}`,
     metaDescription:
-      "Contact page template for corrections, official source updates, and site feedback.",
+      "Contact PATLABOR the Case Files Wiki for corrections, official source updates, and editorial feedback.",
     summary:
-      "A trust page for corrections, source updates, and site feedback.",
+      "How to send corrections, official source links, and editorial feedback to the PATLABOR the Case Files Wiki.",
     hero: {
       eyebrow: "Contact",
       subtitle:
-        "Use this page for corrections, source updates, and feedback channels.",
+        "Send corrections, official source links, and editorial feedback to the maintainers of PATLABOR the Case Files Wiki.",
       ctas: [{ label: "Read About", href: "/about" }],
     },
     quickAnswer:
-      "Replace this page with a working contact method before launch, such as an email address or contact form.",
+      "Send corrections and source updates to support@patlaborthecasefiles.wiki. Include the official source URL and the page that needs to be updated.",
     keyFacts: [
-      { label: "Primary use", value: "Corrections and feedback" },
-      { label: "Launch requirement", value: "Add a real contact method" },
-      { label: "Response", value: "Set expectations clearly" },
+      { label: "Email", value: "support@patlaborthecasefiles.wiki" },
+      { label: "Primary use", value: "Corrections and source links" },
+      { label: "Response window", value: "Best-effort, no SLA" },
     ],
     modules: [
       {
         id: "contact-method",
         type: "prose",
-        heading: "Contact method",
+        heading: "Email",
         body:
-          "Add a real email address or form endpoint before publishing. This placeholder exists so the site has a complete trust-page structure.",
+          "Email support@patlaborthecasefiles.wiki for corrections, source links, or editorial feedback. The address is also published as a Cloudflare Email Routing forwarder under the same domain.",
       },
       {
         id: "corrections",
         type: "prose",
         heading: "Corrections",
         body:
-          "Invite readers to send official source links when facts change. Do not ask for private account information or game account credentials.",
+          "If you spot an out-of-date fact, include the page URL, the official source (Steam store page link, SteamDB snapshot link, or publisher press release), and the corrected value. Do not send private account information or game account credentials.",
+      },
+      {
+        id: "no-guarantees",
+        type: "prose",
+        heading: "Response expectations",
+        body:
+          "The maintainers respond on a best-effort basis. There is no formal SLA, and not every message receives a one-to-one reply. Confirmed corrections are folded into the next content refresh, dated to the refresh date, and visible in the GROWTH_LOG.md of the site repository.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "privacy-policy", "terms"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: "2026-09-16",
   },
   {
     id: "privacy-policy",
@@ -166,21 +128,21 @@ export const sitePages: PageContent[] = [
     h1: "Privacy Policy",
     seoTitle: `Privacy Policy | ${site.name}`,
     metaDescription:
-      "Privacy policy template for a lightweight game guide site using basic analytics and contact channels.",
+      "Privacy policy for PATLABOR the Case Files Wiki: Google Analytics 4 measurement data, Cloudflare Email Routing, and the trust-page contact method.",
     summary:
-      "A starter privacy policy page for analytics, logs, and contact messages.",
+      "What data PATLABOR the Case Files Wiki collects, why it is used, and how visitors can reach the maintainers.",
     hero: {
       eyebrow: "Privacy",
       subtitle:
-        "Explain what data the site collects, why it is used, and how visitors can make contact.",
+        "What data this site collects, why it is used, and how to reach the maintainers.",
       ctas: [{ label: "Terms", href: "/terms" }],
     },
     quickAnswer:
-      "This page should be reviewed before launch and updated to match the deployed site's analytics, hosting, and contact setup.",
+      "PATLABOR the Case Files Wiki uses Google Analytics 4 for aggregate traffic measurement and Cloudflare Email Routing for the support@patlaborthecasefiles.wiki forwarder. The site does not run user accounts, comments, payments, or third-party tracking beyond the analytics measurement.",
     keyFacts: [
-      { label: "Analytics", value: "GA4 only when configured" },
-      { label: "Accounts", value: "No user accounts in V1" },
-      { label: "Ads", value: "Adsterra only when enabled" },
+      { label: "Analytics", value: "Google Analytics 4 (aggregate, no PII)" },
+      { label: "Email", value: "Cloudflare Email Routing forwarder" },
+      { label: "Ads", value: "Not enabled at launch" },
     ],
     modules: [
       {
@@ -188,28 +150,28 @@ export const sitePages: PageContent[] = [
         type: "prose",
         heading: "Information we collect",
         body:
-          "This site does not include accounts, comments, or payments. If GA4 is configured, analytics may collect aggregate usage information according to Google Analytics settings. If advertising is enabled, the third-party advertising provider may process technical request data and use cookies or similar technologies to deliver and measure ads.",
+          "Google Analytics 4 measures aggregate traffic patterns for the launch-day reference pages (release date, PS5 status, gameplay, trailer, reviews, Steam, system requirements, franchise). GA4 is configured without advertising features and without Personally Identifiable Information tracking. The Cloudflare static-asset layer records standard request metadata for abuse mitigation.",
       },
       {
         id: "contact",
         type: "prose",
         heading: "Contact messages",
         body:
-          "If a contact method is added, messages may include the information visitors choose to send. Do not request sensitive personal information.",
+          "Messages sent to support@patlaborthecasefiles.wiki are received by the maintainers via Cloudflare Email Routing. Do not include sensitive personal information in contact messages; only the details required to verify the source are needed for a correction.",
       },
       {
         id: "updates",
         type: "prose",
         heading: "Policy updates",
         body:
-          "Update this policy when analytics, hosting, contact methods, advertising providers, or other data collection behavior changes.",
+          "This policy is reviewed whenever the analytics configuration, hosting provider, or contact method changes. The last-reviewed date at the top of the page reflects the most recent review.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "contact", "terms"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: "2026-09-16",
   },
   {
     id: "terms",
@@ -223,21 +185,21 @@ export const sitePages: PageContent[] = [
     h1: "Terms of Use",
     seoTitle: `Terms of Use | ${site.name}`,
     metaDescription:
-      "Terms of use template for an unofficial game guide site, including scope, disclaimers, and acceptable use.",
+      "Terms of use for PATLABOR the Case Files Wiki: unofficial status, informational use, and acceptable use.",
     summary:
-      "A starter terms page for an unofficial guide site.",
+      "Unofficial-status disclaimer, informational-use scope, and acceptable-use rules for PATLABOR the Case Files Wiki.",
     hero: {
       eyebrow: "Terms",
       subtitle:
-        "Set clear expectations for unofficial status, informational use, and site changes.",
+        "Unofficial status, informational use, and acceptable-use rules for the launch-day reference.",
       ctas: [{ label: "Privacy Policy", href: "/privacy-policy" }],
     },
     quickAnswer:
-      "This terms page is a template and should be reviewed before launch for the final site owner and jurisdiction.",
+      "PATLABOR the Case Files Wiki is an unofficial fan reference. Information may change as official sources update; always verify on the Steam store page or SteamDB before purchase.",
     keyFacts: [
-      { label: "Use", value: "Informational guide content" },
+      { label: "Use", value: "Informational reference content" },
       { label: "Official status", value: "Unofficial fan site" },
-      { label: "Review", value: "Update before launch" },
+      { label: "Last reviewed", value: "2026-09-16" },
     ],
     modules: [
       {
@@ -245,27 +207,27 @@ export const sitePages: PageContent[] = [
         type: "prose",
         heading: "Unofficial site",
         body:
-          "This site is not affiliated with the game publisher, developer, platform holders, or trademark owners unless explicitly stated after launch.",
+          "PATLABOR the Case Files Wiki is not affiliated with GOOD SMILE COMPANY, Chime Corporation, Bandai Namco Filmworks, the Headgear creative collective, the original Mobile Police Patlabor anime production committee, or any platform holder. Trademarks and game content referenced on this site are the property of their respective owners.",
       },
       {
         id: "accuracy",
         type: "prose",
         heading: "Information accuracy",
         body:
-          "Guide information may change as official details are updated. Use official sources for final purchase, platform, and release decisions.",
+          "Guide information may change as official details are updated by the publisher or the Steam store. Use the Steam store page for AppID 3275400 and the SteamDB metadata snapshot as the authoritative sources for release date, platform, languages, modes, and system requirements before any purchase decision.",
       },
       {
         id: "acceptable-use",
         type: "prose",
         heading: "Acceptable use",
         body:
-          "Do not misuse the site, scrape aggressively, interfere with service availability, or submit harmful content through any future contact channel.",
+          "Do not misuse the site, scrape aggressively, interfere with service availability, or submit harmful content through any contact channel. The maintainers reserve the right to block abusive request sources at the Cloudflare edge without notice.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "contact", "privacy-policy"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: "2026-09-16",
   },
 ];

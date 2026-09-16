@@ -9,63 +9,101 @@ export const homePage: PageContent = {
   slug: "",
   url: "/",
   pageType: "home",
-  presentation: { shell: "home" },
-  h1: `${site.gameName} Guide Hub`,
-  seoTitle: `${site.gameName} Guide Hub | Wiki, Guides, Release Date, FAQ`,
+  presentation: { shell: "home", variant: "media-hero" },
+  h1: "PATLABOR the Case Files",
+  seoTitle:
+    "PATLABOR the Case Files: Steam Hub for the New Mecha Game",
   metaDescription:
-    "A clean guide hub template with wiki notes, starter guides, release information, FAQs, and trust pages for a game攻略站 launch.",
+    "PATLABOR the Case Files hub covers the Steam launch, Windows-only platform, PS5 status, gameplay modes, official trailer, and franchise context for en-US players.",
   summary:
-    "Start here for the wiki index, guide categories, launch information, and frequently asked questions.",
+    "Launch-day reference hub for PATLABOR the Case Files (Steam AppID 3275400): release date, PS5 status, gameplay, trailer, reviews, Steam page, system requirements, and franchise context.",
   hero: {
-    eyebrow: "Unofficial guide hub",
+    eyebrow: "Launch-day reference",
     subtitle: site.tagline,
     ctas: [
-      { label: "Open Wiki", href: "/wiki" },
-      { label: "Browse Guides", href: "/guides" },
+      { label: "View on Steam", href: "https://store.steampowered.com/app/3275400/PATLABOR_the_Case_Files/" },
+      { label: "Read the overview", href: "/patlabor-the-case-files/" },
     ],
   },
   quickAnswer:
-    "This homepage acts as the central guide hub for the selected game, linking users to wiki notes, guides, release information, and FAQs.",
+    "PATLABOR the Case Files is a 3D mecha action game developed by Chime Corporation and published by GOOD SMILE COMPANY. It launched on Steam on 2026-09-16 for Windows 64-bit, with full controller support, single-player Main Missions, Another Side Missions, Simulator Mode and over 20 playable Labors. This hub collects the launch-day pages en-US players most often search for.",
   keyFacts: [
-    { label: "Site type", value: "Unofficial guide hub" },
-    { label: "V1 page set", value: "5 content pages + 4 trust pages" },
-    { label: "Source rule", value: "Official facts only before launch" },
+    { label: "Release date", value: "2026-09-16 (Steam AppID 3275400)" },
+    { label: "Developer", value: "Chime Corporation" },
+    { label: "Publisher", value: "GOOD SMILE COMPANY" },
+    { label: "Platform", value: "Windows 64-bit only" },
   ],
   modules: [
     {
-      id: "start-here",
-      type: "prose",
-      heading: "Start here",
-      body:
-        "Use the wiki page for core game facts, the guides page for player-facing help, and the release page for official launch timing. Replace each placeholder with verified information before publishing.",
-      links: [
-        { label: "Wiki", href: "/wiki", description: "Core facts and game systems." },
-        { label: "Guides", href: "/guides", description: "Starter guide categories." },
-        { label: "Release Date", href: "/release-date", description: "Official launch timing." },
+      id: "identity-status",
+      type: "entity-grid",
+      heading: "Identity & Status",
+      items: [
+        {
+          title: "Overview",
+          summary: "Developer, publisher, platform, languages, and franchise context.",
+          href: "/patlabor-the-case-files/",
+        },
+        {
+          title: "Release date",
+          summary: "Steam release date 2026-09-16 with sources.",
+          href: "/patlabor-the-case-files/release-date/",
+        },
+        {
+          title: "PS5 status",
+          summary: "Not confirmed by the publisher as of 2026-09-16.",
+          href: "/patlabor-the-case-files/ps5-release-date/",
+        },
+        {
+          title: "Franchise context",
+          summary: "How the new game fits the Mobile Police Patlabor franchise.",
+          href: "/patlabor-the-case-files/franchise/",
+        },
       ],
     },
     {
-      id: "safe-launch",
-      type: "prose",
-      heading: "Safe launch baseline",
-      body:
-        "The template keeps the first version small so the launch workflow can verify routing, metadata, sitemap, robots, analytics, and Search Console submission before deeper content work begins.",
-    },
-    {
-      id: "example-entries",
+      id: "play-buy",
       type: "entity-grid",
-      heading: "Guide Entry Points",
+      heading: "Play & Buy",
       items: [
-        { title: "Wiki", summary: "Core facts and game systems.", href: "/wiki" },
-        { title: "Guides", summary: "Starter guide categories.", href: "/guides" },
-        { title: "Release Date", summary: "Official launch timing.", href: "/release-date" },
-        { title: "FAQ", summary: "Short answers and source context.", href: "/faq" },
+        {
+          title: "Gameplay",
+          summary: "Main Missions, Another Side, Simulator Mode, and 20+ Labors.",
+          href: "/patlabor-the-case-files/gameplay/",
+        },
+        {
+          title: "Trailer",
+          summary: "Official GOOD SMILE COMPANY trailer and Steam embed.",
+          href: "/patlabor-the-case-files/trailer/",
+        },
+        {
+          title: "Reviews",
+          summary: "Launch-day reviews and Steam Community Hub user ratings.",
+          href: "/patlabor-the-case-files/reviews/",
+        },
+        {
+          title: "Steam",
+          summary: "AppID 3275400, languages, edition, and price snapshot.",
+          href: "/patlabor-the-case-files/steam/",
+        },
+        {
+          title: "System requirements",
+          summary: "Minimum and recommended PC specs for Windows 64-bit.",
+          href: "/patlabor-the-case-files/system-requirements/",
+        },
       ],
     },
   ],
-  faqIds: ["what-is-this-site", "is-official"],
-  relatedPageIds: ["wiki", "guides", "release-date", "faq"],
+  faqIds: ["what-is-patlabor-the-case-files", "when-did-it-release", "is-it-on-ps5", "modes-and-labors"],
+  relatedPageIds: [
+    "fixed-patlabor-overview-en-US",
+    "fixed-patlabor-release-date-en-US",
+    "fixed-patlabor-ps5-status-en-US",
+    "fixed-patlabor-gameplay-en-US",
+    "fixed-patlabor-steam-en-US",
+    "fixed-patlabor-system-requirements-en-US",
+  ],
   schemaTypes: ["WebSite", "CollectionPage", "FAQPage"],
-  sourceStatus: "internal",
-  lastReviewed: "2026-06-18",
+  sourceStatus: "official",
+  lastReviewed: "2026-09-16",
 };
