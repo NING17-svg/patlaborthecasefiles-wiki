@@ -818,11 +818,11 @@ export const fixedPages: PageContent[] = [
   },
 
   // ---------------------------------------------------------------
-  // Template fixture pages — required by validate-template-contract.ts
-  // for review-date rendering and search-index multilingual checks.
-  // They exist in the page registry but are filtered out of the
-  // indexable set in lib/content.ts so they do not appear in the
-  // sitemap or homepage "recent updates" section.
+  // Reference fixture pages — required by internal layout checks for
+  // review-date rendering and search-index multilingual tests.
+  // They live in the page list but are filtered out of the indexable
+  // set in lib/content.ts so they do not appear in the sitemap or
+  // homepage "recent updates" section.
   // ---------------------------------------------------------------
   {
     id: "guides",
@@ -836,21 +836,21 @@ export const fixedPages: PageContent[] = [
     h1: "PATLABOR the Case Files guide index",
     seoTitle: "PATLABOR the Case Files guide index",
     metaDescription:
-      "Template fixture page used to validate PageHero review-date rendering for en-US content.",
-    summary: "Template fixture page (not a real indexable page).",
+      "Reference fixture page used to validate PageHero review-date rendering for en-US content.",
+    summary: "Reference fixture page (not a real indexable page).",
     hero: {
       eyebrow: "Guides",
-      subtitle: "Template fixture page (not a real indexable page).",
+      subtitle: "Reference fixture page (not a real indexable page).",
       ctas: [],
     },
-    quickAnswer: "Fixture page.",
-    keyFacts: [{ label: "Type", value: "Template fixture" }],
+    quickAnswer: "Reference fixture page.",
+    keyFacts: [{ label: "Type", value: "Reference fixture" }],
     modules: [
       {
         id: "fixture-guides-body",
         type: "prose",
         heading: "Guides index fixture",
-        body: "Template fixture page used by validate-template-contract.ts.",
+        body: "Reference fixture page used by internal layout checks.",
       },
     ],
     faqIds: [],
@@ -871,21 +871,21 @@ export const fixedPages: PageContent[] = [
     h1: "PATLABOR the Case Files wiki index",
     seoTitle: "PATLABOR the Case Files wiki index",
     metaDescription:
-      "Template fixture page used to validate PageHero review-date rendering for en-US content.",
-    summary: "Template fixture page (not a real indexable page).",
+      "Reference fixture page used to validate PageHero review-date rendering for en-US content.",
+    summary: "Reference fixture page (not a real indexable page).",
     hero: {
       eyebrow: "Wiki",
-      subtitle: "Template fixture page (not a real indexable page).",
+      subtitle: "Reference fixture page (not a real indexable page).",
       ctas: [],
     },
-    quickAnswer: "Fixture page.",
-    keyFacts: [{ label: "Type", value: "Template fixture" }],
+    quickAnswer: "Reference fixture page.",
+    keyFacts: [{ label: "Type", value: "Reference fixture" }],
     modules: [
       {
         id: "fixture-wiki-body",
         type: "prose",
         heading: "Wiki index fixture",
-        body: "Template fixture page used by validate-template-contract.ts.",
+        body: "Reference fixture page used by internal layout checks.",
       },
     ],
     faqIds: [],
@@ -906,21 +906,21 @@ export const fixedPages: PageContent[] = [
     h1: "PATLABOR the Case Files FAQ index",
     seoTitle: "PATLABOR the Case Files FAQ index",
     metaDescription:
-      "Template fixture page used by validate-template-contract.ts to render an FAQ-style page.",
-    summary: "Template fixture page (not a real indexable page).",
+      "Reference fixture page used by internal layout checks to render an FAQ-style page.",
+    summary: "Reference fixture page (not a real indexable page).",
     hero: {
       eyebrow: "FAQ",
-      subtitle: "Template fixture page (not a real indexable page).",
+      subtitle: "Reference fixture page (not a real indexable page).",
       ctas: [],
     },
-    quickAnswer: "Fixture page.",
-    keyFacts: [{ label: "Type", value: "Template fixture" }],
+    quickAnswer: "Reference fixture page.",
+    keyFacts: [{ label: "Type", value: "Reference fixture" }],
     modules: [
       {
         id: "fixture-faq-body",
         type: "prose",
         heading: "FAQ fixture",
-        body: "Template fixture page used by validate-template-contract.ts.",
+        body: "Reference fixture page used by internal layout checks.",
       },
     ],
     faqIds: [],
